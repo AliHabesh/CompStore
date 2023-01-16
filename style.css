@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background: black;
+  display: flex;
+  padding: 25px;
+  font-size: large;
+  font-family: sans-serif;
+  color: azure;
+}
+
+.cardBox {
+  flex: 1 0 calc(30% - 10px);
+  height: 30%;
+  width: 30%;
+  background: #f00;
+  display: flex;
+  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.4);
+  border-radius: 25px;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+.inner {
+  padding: 10px;
+  flex: 1 0 0;
+  display: flex;
+  flex-wrap: wrap;
+}
