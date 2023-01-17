@@ -10,9 +10,34 @@
   <body>
     <header class="header">Computer Store</header>
     <div class="inner">
-      <div class="cardBox">Hello Hello</div>
-      <div class="cardBox">Hello</div>
-      <div class="cardBox">Hello</div>
+      <div class="cardBox">
+        <h1>Joe Banker</h1>
+        <div class="row-data">
+          <h2>Balance</h2>
+          <h2 id="currentBalance">0</h2>
+        </div>
+        <button>Get Loan</button>
+      </div>
+      <div class="cardBox">
+        <h1>Work</h1>
+        <div class="row-data">
+          <h2>Pay</h2>
+          <h2 id="salary">0</h2>
+        </div>
+        <div class="row-data-button">
+          <button>Work</button>
+          <button>Transfer</button>
+        </div>
+      </div>
+      <div class="cardBox">
+        <h1>Laptops</h1>
+        <div class="selectBoxCard">
+          <select name="listOfComputers" class="selector"></select>
+        </div>
+        <h3>Features:</h3>
+        <p id="laptop-info">Information</p>
+      </div>
+      <div class="cardBox cardBox-large">Hello</div>
     </div>
 
     <script src="ComputerStoreLogic.js"></script>

@@ -18,18 +18,82 @@ body {
   flex: 1 0 calc(30% - 10px);
   height: 30%;
   width: 30%;
-  background: #f00;
   display: flex;
+  flex-direction: column;
   box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.4);
   border-radius: 25px;
   justify-content: center;
   align-items: center;
   margin: 5px;
+  overflow: hidden;
+}
+
+.selectBoxCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.selector {
+  position: relative;
+}
+
+/* CSS */
+button {
+  background-color: #ea4c89;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-1:hover,
+.button-1:focus {
+  background-color: #f082ac;
+}
+.row-data {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+}
+
+.row-data-button {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  width: 30%;
 }
 
 .inner {
+  overflow: hidden;
   padding: 10px;
   flex: 1 0 0;
   display: flex;
   flex-wrap: wrap;
+}
+
+.cardBox-large {
+  overflow: hidden;
+  flex-basis: calc(100% - 10px);
+  width: calc(100% - 10px);
+  height: 60%;
 }
