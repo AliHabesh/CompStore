@@ -13,6 +13,8 @@ let balance = document.getElementById('currentBalance');
 let loanButton = document.getElementById('getLoan'); 
 let alreadyLoanedMoney = false;
 let currentDebt = 0;
+let buyButton = document.getElementById('buyNow');
+let selectedComputerPrice = document.getElementById('computerPrice');
 
 
 
@@ -20,23 +22,37 @@ let currentDebt = 0;
 workButton.addEventListener("click", work);
 transferButton.addEventListener("click", transferWorMoney);
 loanButton.addEventListener("click", takeLoan);
+buyButton.addEventListener("click", purchaseItem);
+
 
 function transferWorMoney(){
   let money = 0;
   if(currentDebt > 0){
+    currentDebt = currentDebt - (currentDebt * .10);
     money = Math.abs(currentDebt - Number(salary.innerHTML));
-    currentDebt = Math.abs(currentDebt - Number(salary.innerHTML));
-    alert('Your current debt after transfering money: '+Math.abs(currentDebt))
+    currentDebt = currentDebt - Number(salary.innerHTML);
+    alert('Your current debt after transfering money (including 10% fee): '+Math.abs(currentDebt))
+    balance.innerHTML = Number(balance.innerHTML) - Number(money);
   }else{
     money = Number(salary.innerHTML);
+    balance.innerHTML = Number(balance.innerHTML) + Number(money);
   }
-  balance.innerHTML = Number(balance.innerHTML) + Number(money);
-  salary.innerHTML = Number(0);
+    salary.innerHTML = Number(0);
 }
 
 function work(){
   console.log(Number(salary.value))
   salary.innerHTML = Number(salary.innerHTML) + Number(100);
+}
+
+function purchaseItem(){
+  if(Number(balance.innerHTML) >= Number(selectedComputerPrice.innerHTML)){
+    balance.innerHTML = Math.abs(Number(balance.innerHTML) - Number(selectedComputerPrice.innerHTML));
+    alert('Congratulations, you have bought the selected item!');
+  }else{
+    alert('Your balance is less than the item price!');
+  }
+
 }
 
 function takeLoan(){
